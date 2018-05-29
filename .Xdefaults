@@ -1,61 +1,86 @@
-*foreground:            #D6D6D6
-*background:            #050505
-*borderColor:           #050505
-*highlightColor:        #a761c2
-*highlightTextColor:    #151515
+# transparency - true or false (default)
+URxvt*transparent: true
 
-*cursorColor:           #dedede
-*cursorColor2:          #151515
+# tint with any color; i.e., blue, red, tomato4, olivedrab2, etc.
+#   some nice listings are at:
+#     http://www.nisrv.com/drupal/?q=node/11
+#     http://www.htmlgoodies.com/tutorials/colors/article.php/3478921
+URxvt*tintColor: Gray
 
-*color0:                #393939
-*color8:                #121212
-*color1:                #DA3955
-*color9:                #ff4775
-*color2:                #308888
-*color10:               #53A6A6
-*color3:                #54777d
-*color11:               #a94f63
-*color4:                #6d9cbe
-*color12:               #91C1E3
-*color5:                #6f4484
-*color13:               #915eaa
-*color6:                #2B7694
-*color14:               #47959E
-*color7:                #D6D6D6
-*color15:               #A3A3A3
+# shading - 0 to 99 darkens, 101 to 200 lightens.
+#   Don't use with tintColor; just use a darker or lighter color instead.
+URxvt*shading: 20
 
-URxvt.intensityStyles:	false
-URxvt.background:       [70]#000000
-URxvt.depth:		32
-URxvt.font: 		xft:monospace:size=11
-URxvt.scrollBar:	false
-URxvt.cursorColor:	white
+# scrollback buffer lines - 65535 is max on most machines (64 is default)
+#URxvt*saveLines: 12000
 
-!! Extensions
-URxvt.perl-ext-common:	default,matcher,resize-font,url-select,keyboard-select
-URxvt.colorUL:		#4682B4
-!! url-select
-URxvt.keysym.M-u:	perl:url-select:select_next
-URxvt.url-select.launcher: linkhandler
-URxvt.url-select.underline: true
-!! keyboard-select:
-URxvt.keysym.M-Escape: perl:keyboard-select:activate
-!! resize-font
-URxvt.resize-font.smaller:	C-Down
-URxvt.resize-font.bigger:	C-Up
-!! Matcher
-URxvt.url-launcher:	linkhandler
-URxvt.matcher.button:	1
+# font color (default is black)
+URxvt*foreground: #41ff0c
 
-rofi.color-enabled:	true
-rofi.color-window:	#000, #000, #000
-rofi.color-normal:	#111, #819396, #222, #008ed4, #ffffff
-rofi.color-active:	#002b37, #008ed4, #003643, #008ed4, #66c6ff
-rofi.color-urgent:	#002b37, #da4281, #003643, #008ed4, #890661
+# background color (prior to tinting) (default is white)
+URxvt*background: #0a0a0a
 
-rofi.fake-transparency:	true
-rofi.lines:		3
-rofi.bw:		0
-rofi.opacity:		"10"
-rofi.hide-scrollbar:	true
-rofi.width:		30
+# Xft (X FreeType) with Bitstream, DejaVu, Liberation, or Terminus fonts:
+#  Fedora/debian packages: libXft/libxft2 
+#  An anti-aliased font setup with Xft looks fantastic; it can be a bit choppy 
+#  on older systems. You can always turn off anti-aliasing (antialias=false) if
+#  your terminal is sluggish. Use only ONE of the Xft pairs below:
+#
+# Xft: Bitstream fonts
+#  Fedora/debian packages: bitstream-vera-sans-mono-fonts/ttf-bitstream-vera 
+#URxvt*font: xft:Bitstream Vera Sans Mono:pixelsize=13:antialias=true:hinting=true
+#URxvt*boldFont: xft:Bitstream Vera Sans Mono:bold:pixelsize=13:antialias=true:hinting=true
+#
+# Xft: DejaVu fonts
+#  Fedora/debian packages: dejavu-sans-mono-fonts/ttf-dejavu 
+#URxvt*font: xft:DejaVu Sans Mono:pixelsize=13:antialias=true:hinting=true
+#URxvt*boldFont: xft:DejaVu Sans Mono:bold:pixelsize=13:antialias=true:hinting=true
+#
+# Xft: Liberation fonts
+#  Fedora/debian packages: liberation-mono-fonts/ttf-liberation
+#URxvt*font: xft:Liberation Mono:pixelsize=13:antialias=true:hinting=true
+#URxvt*boldFont: xft:Liberation Mono:bold:pixelsize=13:antialias=true:hinting=true
+#
+# Xft: Monospace fonts
+#  Fedora/debian packages: liberation-mono-fonts/ttf-liberation
+#URxvt*font: xft:Courier New:pixelsize=14:antialias=true:hinting=true
+#URxvt*boldFont: xft:Courier New:bold:pixelsize=14:antialias=true:hinting=true
+#
+# Xft: Terminus fonts
+#  Fedora/debian packages: terminus-fonts/xfonts-terminus
+URxvt*font: xft:terminus:pixelsize=15
+URxvt*boldFont: xft:terminus:bold:pixelsize=15
+
+# Xft: Ubuntu Fonts
+#  Fedora/debian packages: 
+#URxvt*font: xft:Ubuntu Mono:pixelsize=13:antialias=true:hinting=true
+#URxvt*boldFont: xft:Ubuntu Mono:bold:pixelsize=13:antialias=true:hinting=true
+
+#URxvt*font: xft:Monaco:size=10
+#URxvt*boldFont: xft:Monaco:bold:size=10
+
+#URxvt*font: xft:Ubuntu Mono:size=11
+#URxvt*boldFont: xft:Ubuntu Mono:bold:size=11
+#URxvt*font: xft:SourceCodePro:size=10
+#URxvt*boldFont: xft:SourceCodePro:bold:size=10
+
+# Traditional fonts - a more traditional font setup in lieu of xft
+#URxvt*font:-*-courier-medium-r-normal-*-14-*-*-*-*-*-iso8859-1
+#URxvt*boldFont:-*-courier-bold-r-normal-*-14-*-*-*-*-*-iso8859-1
+
+# Replace blue folder colors with a lighter shade for clarity. To
+#  set colored folders and files within urxvt, xterm, and aterm, add
+#  the following line to your ~/.bashrc ($HOME/.bashrc) file under
+#  the heading "# User specific aliases and functions":
+#   alias ls="ls -h --color=auto"
+URxvt*color4: RoyalBlue
+URxvt*color12: RoyalBlue
+
+# scrollbar - true (default) or false
+URxvt*scrollBar: false
+
+# scrollbar position - left=false (default) or right=true
+URxvt*scrollBar_right: false
+
+# scrollbar style - rxvt (default), plain, next, or xterm
+URxvt*scrollstyle: rxvt
