@@ -1,3 +1,3 @@
 # Overview
 Config files for linux bootstrapping with DARBS.
-WIP.
+WIP. This is for my debian config with MATE
