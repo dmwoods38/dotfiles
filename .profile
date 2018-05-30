@@ -24,6 +24,5 @@ fi
 export EDITOR="vim"
 export BROWSER="firefox"
 
-if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-	exec startx
-fi
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/go
